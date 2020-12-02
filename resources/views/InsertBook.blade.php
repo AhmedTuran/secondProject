@@ -22,7 +22,7 @@
 @endif
 <div align="center">
     <h1>Insert Book Data</h1>
-    <form action="{{url('Library')}}" method="post">
+    <form action="{{url('library')}}" method="post">
         {{csrf_field()}}
         <label for="BookName">BookName: </label>
         <input type="text" name="BookName" ><br>
@@ -32,7 +32,7 @@
         <input type="email" name="AuthorEmail" ><br>
         <input type="submit" value="save"><br>
     </form>
-    <form action="{{url('Library')}}" method="get">
+    <form action="{{url('library')}}" method="get">
         {{csrf_field()}}
 
         <button type="submit" >show the table</button>

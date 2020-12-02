@@ -13,7 +13,7 @@ use App\http\Controllers\admin;
 |
 */
 //
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-Route::resource('Library',admin::class);
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::resource('library',admin::class);

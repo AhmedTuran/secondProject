@@ -13,24 +13,25 @@
     <table border="1">
         <thead border="1">
         <tr>
-            <th><h3><strong>name</strong></h3></th>
-            <th><h3><strong>email</strong></h3></th>
+            <th><h3><strong>BookName</strong></h3></th>
+            <th><h3><strong>Author</strong></h3></th>
+            <th><h3><strong>AuthorEmail</strong></h3></th>
             <th><h3><strong>operation</strong></h3></th>
         </tr>
         </thead>
         <tbody>
-        @foreach($allLibraries as $library)
+        @foreach($allLibrary as $library)
             <tr>
                 <th>{{$library->BookName}}</th>
                 <th>{{$library->Author}}</th>
                 <th>{{$library->AuthorEmail}}</th>
                 <td>
-                    <form action="{{url('Library/'.$library->id)}}" method="post">
+                    <form action="{{url('library/'.$library->id)}}" method="post">
                         {{csrf_field()}}
                         {{method_field('PUT')}}
                         <button type="submit" >up date</button>
                     </form>
-                    <form action="{{url('Library/'.$library->id)}}" method="post">
+                    <form action="{{url('library/'.$library->id)}}" method="post">
                         {{csrf_field()}}
                         {{method_field('DELETE')}}
                         <button type="submit" >delete</button>
@@ -41,7 +42,7 @@
         </tbody>
         <tfoot></tfoot>
     </table>
-    <form action="{{url('Library/create')}}" method="get">
+    <form action="{{url('library/create')}}" method="get">
         {{csrf_field()}}
         <button type="submit" >creat an account</button> </form>
 </div>

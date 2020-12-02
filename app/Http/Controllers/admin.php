@@ -10,13 +10,13 @@ class admin extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
         //
         $libraries = library:: all();
-        return view('users.index') ->with('allUsers',$libraries);
+        return view('BookStor') ->with('allLibrary',$libraries);
     }
 
     /**
@@ -27,6 +27,7 @@ class admin extends Controller
     public function create()
     {
         //
+        return view('InsertBook');
     }
 
     /**
@@ -98,6 +99,8 @@ class admin extends Controller
     public function update(Request $request, $id)
     {
         //
+        $library= library::fined($id);
+        return view('EditBook')->with('$one_library',$library);
     }
 
     /**
